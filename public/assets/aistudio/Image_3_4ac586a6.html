@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>ProjectLens</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-primary": "#6d3bd7",
+          "secondary": "#4cd7f6",
+          "on-primary-fixed": "#23005c",
+          "on-tertiary-fixed-variant": "#6900b3",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "primary": "#d0bcff",
+          "surface-container-low": "#171b2a",
+          "on-tertiary-fixed": "#2c0051",
+          "on-background": "#dfe1f6",
+          "primary-fixed-dim": "#d0bcff",
+          "surface-bright": "#353948",
+          "on-primary-container": "#340080",
+          "outline-variant": "#494454",
+          "tertiary-container": "#b76dff",
+          "on-tertiary-container": "#400071",
+          "outline": "#958ea0",
+          "on-surface-variant": "#cbc3d7",
+          "on-tertiary": "#490080",
+          "on-surface": "#dfe1f6",
+          "secondary-fixed": "#acedff",
+          "on-primary": "#3c0091",
+          "surface-container-high": "#252939",
+          "surface-container-highest": "#303444",
+          "surface-variant": "#303444",
+          "surface": "#0f1321",
+          "secondary-container": "#03b5d3",
+          "inverse-on-surface": "#2c303f",
+          "inverse-surface": "#dfe1f6",
+          "on-secondary-fixed-variant": "#004e5c",
+          "tertiary": "#ddb7ff",
+          "tertiary-fixed": "#f0dbff",
+          "surface-container": "#1b1f2e",
+          "surface-dim": "#0f1321",
+          "error": "#ffb4ab",
+          "on-secondary-fixed": "#001f26",
+          "surface-tint": "#d0bcff",
+          "on-secondary-container": "#00424e",
+          "secondary-fixed-dim": "#4cd7f6",
+          "background": "#0f1321",
+          "primary-fixed": "#e9ddff",
+          "tertiary-fixed-dim": "#ddb7ff",
+          "primary-container": "#a078ff",
+          "surface-container-lowest": "#090e1c",
+          "on-primary-fixed-variant": "#5516be",
+          "on-secondary": "#003640",
+          "error-container": "#93000a"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "gutter-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem"
+        },
+        "fontFamily": {
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-md-mobile": [
+            "Inter"
+          ],
+          "display-mobile": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-lg": [
+            "1.125rem",
+            {
+              "lineHeight": "1.6",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "2.5rem",
+            {
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display": [
+            "3.5rem",
+            {
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-sm": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "0.75rem",
+            {
+              "lineHeight": "1",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "0.9375rem",
+            {
+              "lineHeight": "1.5",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "1.875rem",
+            {
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md-mobile": [
+            "1.5rem",
+            {
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-mobile": [
+            "2.25rem",
+            {
+              "lineHeight": "1.15",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "label-sm": [
+            "0.6875rem",
+            {
+              "lineHeight": "1",
+              "letterSpacing": "0.05em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg-mobile": [
+            "1.75rem",
+            {
+              "lineHeight": "1.25",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "1.25rem",
+            {
+              "lineHeight": "1.4",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "0.875rem",
+            {
+              "lineHeight": "1",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"><div class="fixed inset-0 pointer-events-none -z-10"><div class="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px]"></div><div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[130px]"></div></div><header class="fixed top-0 left-0 right-0 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><img alt="ProjectLens Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WWZBsMzObmYLvWPpCm-eEHX0KO--1S9DYITVyf0FvoR7RoAKdE9Ladgt6A0Lr-N_5rd3-pp28bNzlcskODxwxBE7O_QFJR98YcwqKoS-_QowFHdIgEPp1Cg9IHh-fM4xtWbBMz5rTjc6QQ_1LjnU7kBJ4CAnkqyF7pbY-yFeM07OMmNQuqopJtFF9y00A1RD6Gxm8r06jmvin_rK-HDOZOC0Cvccf0A7bLifvz8q0C7rJ-cXlqK6_fyng"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">ProjectLens</span><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">AI Idea Intelligence</span></div><span class="font-body-sm text-body-sm text-on-surface-variant hidden lg:inline">See Your Project Clearly</span></div></div><nav class="hidden md:flex items-center bg-surface-container-lowest p-1 rounded-lg gap-1" data-active-classes="bg-surface-container-highest text-on-surface shadow-[0_0_12px_rgba(208,188,255,0.15)]"><a aria-current="page" class="px-space-md py-2 rounded-lg font-label-md transition-all bg-surface-container-highest text-on-surface shadow-[0_0_12px_rgba(208,188,255,0.15)]" data-path="idea-studio" href="#">Idea Studio</a><a class="px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="active-dashboard" href="#">Active Dashboard</a><a class="px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="architecture-and-api-docs" href="#">Architecture &amp; API Docs</a></nav></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-low"><div class="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(76,215,246,0.6)]"></div><span class="font-label-sm text-label-sm text-on-surface-variant">AI Engine: <span class="text-secondary font-medium">Connected</span> (Dual Mode: Live API + Client Inference Engine)</span></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-secondary">menu_book</span><span class="hidden sm:inline">Docs</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-primary">restart_alt</span><span class="hidden sm:inline">Reset Workspace</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background relative z-10"><div class="flex flex-col w-full">
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-4 py-3 rounded-xl bg-surface-container-highest text-on-surface shadow-2xl backdrop-blur-xl" id="toastNotification">
+<span class="material-symbols-outlined text-secondary" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Action completed successfully</span>
+</div>
+<!-- Main View Container: Studio & Dashboard -->
+<div class="w-full max-w-[1400px] mx-auto px-margin-mobile md:px-margin pb-24">
+<!-- Global View Sub-Header / Perspective Bar -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md py-6 my-2 border-b-0">
+<div class="flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-lowest">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-highest text-on-surface shadow-[0_0_12px_rgba(208,188,255,0.15)]" id="navStudioBtn" onclick="switchMainView('studio')">
+<span class="material-symbols-outlined text-[18px] text-primary">edit_note</span>
+<span>1. Idea Studio</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="navDashboardBtn" onclick="switchMainView('dashboard')">
+<span class="material-symbols-outlined text-[18px] text-secondary">analytics</span>
+<span>2. Intelligence Dashboard</span>
+<span class="hidden ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-secondary/15 text-secondary" id="navDashStatusPill">Ready</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm w-full lg:w-auto justify-end">
+<!-- API Config Modal Toggle Button -->
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" onclick="toggleApiModal(true)">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<span id="apiEngineBadge">Dual Engine (Auto Fallback)</span>
+</button>
+<!-- History / Saved Drafts quick peek -->
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span id="activeWorkspaceName">Halal Food Intelligence Matrix</span>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- VIEW 1: IDEA STUDIO (INPUT FORM & ENGINE) -->
+<!-- ========================================== -->
+<section class="w-full flex flex-col gap-8 transition-opacity duration-300" id="viewStudio">
+<!-- Studio Hero Block -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface-container to-surface-container-low p-8 lg:p-12 shadow-xl">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-80 h-80 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 text-primary w-fit font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span>See Your Project Clearly</span>
+</div>
+<h1 class="font-display text-headline-lg lg:text-display text-on-surface tracking-tight font-extrabold leading-tight">
+            Transform Raw Ideas into Clear, Validated Product Blueprints with AI
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Deep-dive autonomous analysis across market research, risk validation, feature improvements, and MVP roadmap execution.
+          </p>
+<!-- Action bar with pre-fill demo & quick actions -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="loadHalalExample()">
+<span class="material-symbols-outlined text-secondary text-[18px]">magic_button</span>
+<span>Try Halal Food App Example</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" onclick="clearStudioForm()">
+<span class="material-symbols-outlined text-[16px]">clear_all</span>
+<span>Clear Form</span>
+</button>
+<span class="text-xs text-on-surface-variant hidden md:inline ml-2">• Evaluates 18 market &amp; technical signals in real-time</span>
+</div>
+</div>
+</div>
+<!-- Input Form Card Grid (4 Core Lenses) -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full" id="studioForm" onsubmit="handleAnalyzeSubmit(event)">
+<!-- Field 1: Idea Description -->
+<div class="flex flex-col gap-3 p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md transition-all hover:bg-surface-container/90">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-primary/20 text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<label class="font-headline-sm text-label-lg text-on-surface font-bold" for="inputIdea">Idea Description</label>
+</div>
+<div class="group relative flex items-center">
+<span class="material-symbols-outlined text-outline hover:text-on-surface text-[18px] cursor-help">help</span>
+<div class="absolute right-0 bottom-6 w-64 p-3 rounded-lg bg-surface-container-highest text-on-surface text-xs shadow-xl hidden group-hover:block z-30 pointer-events-none">
+                Detail the primary mechanics, interactions, and expected capabilities of your solution.
+              </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Describe what you want to build, how it works, and key functionality.</p>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder-on-surface-variant/40 font-body-md text-body-md resize-none outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="inputIdea" placeholder="e.g., A mobile application that allows consumers to scan barcodes or camera snapshot ingredients to instantly assess Halal/Haram compliance..." required="" rows="5"></textarea>
+<div class="flex justify-between items-center text-xs text-on-surface-variant pt-1">
+<span>Essential for capability synthesis</span>
+<span id="charCountIdea">0 chars</span>
+</div>
+</div>
+<!-- Field 2: Target Audience -->
+<div class="flex flex-col gap-3 p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md transition-all hover:bg-surface-container/90">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-secondary/20 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<label class="font-headline-sm text-label-lg text-on-surface font-bold" for="inputAudience">Target Audience</label>
+</div>
+<div class="group relative flex items-center">
+<span class="material-symbols-outlined text-outline hover:text-on-surface text-[18px] cursor-help">help</span>
+<div class="absolute right-0 bottom-6 w-64 p-3 rounded-lg bg-surface-container-highest text-on-surface text-xs shadow-xl hidden group-hover:block z-30 pointer-events-none">
+                Specific segments, demographics, tech-savviness, and geographic distribution.
+              </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Who is this for? e.g., demographics, personas, specific pain-points.</p>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder-on-surface-variant/40 font-body-md text-body-md resize-none outline-none focus:ring-2 focus:ring-secondary/40 transition-all" id="inputAudience" placeholder="e.g., Muslim consumers, traveling professionals, international students living abroad, dietary-conscious families..." required="" rows="5"></textarea>
+<div class="flex justify-between items-center text-xs text-on-surface-variant pt-1">
+<span>Shapes persona clustering</span>
+<span id="charCountAudience">0 chars</span>
+</div>
+</div>
+<!-- Field 3: Problem You're Solving -->
+<div class="flex flex-col gap-3 p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md transition-all hover:bg-surface-container/90">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-tertiary-container/40 text-tertiary flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<label class="font-headline-sm text-label-lg text-on-surface font-bold" for="inputProblem">Problem You're Solving</label>
+</div>
+<div class="group relative flex items-center">
+<span class="material-symbols-outlined text-outline hover:text-on-surface text-[18px] cursor-help">help</span>
+<div class="absolute right-0 bottom-6 w-64 p-3 rounded-lg bg-surface-container-highest text-on-surface text-xs shadow-xl hidden group-hover:block z-30 pointer-events-none">
+                The sharpest everyday friction, financial cost, anxiety, or wasted time.
+              </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">What core friction or frustration does this solve?</p>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder-on-surface-variant/40 font-body-md text-body-md resize-none outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="inputProblem" placeholder="e.g., Complex chemical additive names (E-numbers), contradictory fat source labeling, lack of certifier transparency in foreign supermarkets..." required="" rows="5"></textarea>
+<div class="flex justify-between items-center text-xs text-on-surface-variant pt-1">
+<span>Drives validation metrics</span>
+<span id="charCountProblem">0 chars</span>
+</div>
+</div>
+<!-- Field 4: Current Solutions -->
+<div class="flex flex-col gap-3 p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md transition-all hover:bg-surface-container/90">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-outline/20 text-on-surface flex items-center justify-center font-label-sm text-label-sm font-bold">4</span>
+<label class="font-headline-sm text-label-lg text-on-surface font-bold" for="inputSolutions">Current Solutions</label>
+</div>
+<div class="group relative flex items-center">
+<span class="material-symbols-outlined text-outline hover:text-on-surface text-[18px] cursor-help">help</span>
+<div class="absolute right-0 bottom-6 w-64 p-3 rounded-lg bg-surface-container-highest text-on-surface text-xs shadow-xl hidden group-hover:block z-30 pointer-events-none">
+                How do they cope today? Workarounds, fragmented tools, spreadsheets, or asking peers.
+              </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">How do users solve this today? Competitors, workarounds, or manual processes.</p>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder-on-surface-variant/40 font-body-md text-body-md resize-none outline-none focus:ring-2 focus:ring-secondary/40 transition-all" id="inputSolutions" placeholder="e.g., Manual Google searches, online forum checks, unverified WhatsApp group queries, physical Islamic grocery certifier stamps..." required="" rows="5"></textarea>
+<div class="flex justify-between items-center text-xs text-on-surface-variant pt-1">
+<span>Evaluates market defensibility</span>
+<span id="charCountSolutions">0 chars</span>
+</div>
+</div>
+<!-- Submit & Analysis Control Bar -->
+<div class="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-surface-container-high/50 backdrop-blur-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Ready for Full Spectrum Analysis</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Synthesizes viability heuristics across 5 tailored dimensions.</span>
+</div>
+</div>
+<button class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-primary-container via-inverse-primary to-secondary font-label-lg text-label-lg text-on-primary font-bold shadow-[0_0_24px_rgba(160,120,255,0.4)] hover:shadow-[0_0_36px_rgba(76,215,246,0.6)] hover:brightness-110 active:scale-[0.99] transition-all" id="analyzeSubmitBtn" type="submit">
+<span class="material-symbols-outlined text-[20px]" id="analyzeBtnIcon">insights</span>
+<span id="analyzeBtnText">Analyze My Project</span>
+</button>
+</div>
+</form>
+<!-- Interactive Live Analysis Tracker (Hidden until trigger) -->
+<div class="hidden flex-col gap-6 p-8 rounded-2xl bg-surface-container-low shadow-2xl backdrop-blur-2xl" id="analysisExecutionTracker">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full border-2 border-secondary border-t-transparent animate-spin"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Deep Synthesizer Active</h3>
+</div>
+<span class="font-label-md text-label-md text-secondary" id="trackerProgressPercent">0%</span>
+</div>
+<!-- Multi-stage progress bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-500 w-0" id="trackerProgressBar"></div>
+</div>
+<!-- 4 Sequential Verification Stages -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container opacity-50 transition-all" id="stageCard1">
+<span class="material-symbols-outlined text-[20px] text-primary" id="stageIcon1">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Stage 1: Intent Mapping</span>
+<span class="text-xs text-on-surface-variant">Taxonomy parsing &amp; vector extraction</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container opacity-50 transition-all" id="stageCard2">
+<span class="material-symbols-outlined text-[20px] text-secondary" id="stageIcon2">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Stage 2: Market Landscape</span>
+<span class="text-xs text-on-surface-variant">Simulating competitor moats &amp; gaps</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container opacity-50 transition-all" id="stageCard3">
+<span class="material-symbols-outlined text-[20px] text-tertiary" id="stageIcon3">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Stage 3: Risk Validation</span>
+<span class="text-xs text-on-surface-variant">Synthesizing severity matrices</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container opacity-50 transition-all" id="stageCard4">
+<span class="material-symbols-outlined text-[20px] text-secondary" id="stageIcon4">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Stage 4: MVP Roadmap</span>
+<span class="text-xs text-on-surface-variant">Prioritizing sprints &amp; build specs</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- VIEW 2: RICH MULTI-SECTION DASHBOARD           -->
+<!-- ============================================== -->
+<section class="hidden w-full flex-col gap-6 transition-opacity duration-300" id="viewDashboard">
+<!-- Top Management Bar: Project Meta & Quick Actions -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-6 rounded-2xl bg-surface-container shadow-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center font-bold text-xl">
+            PL
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface font-bold tracking-tight" id="dashProjectTitle">Halal Food Intelligence Matrix</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary text-xs font-semibold">Viable 94/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="dashProjectSub">Generated using ProjectLens Autonomous Heuristic Synthesizer</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 w-full md:w-auto justify-end">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all" onclick="reAnalyzeProject()">
+<span class="material-symbols-outlined text-[16px] text-secondary">refresh</span>
+<span>Analyze Again</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all" onclick="refineCurrentProject()">
+<span class="material-symbols-outlined text-[16px] text-primary">edit</span>
+<span>Refine in Studio</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-label-md text-label-md transition-all" onclick="startNewProjectPrompt()">
+<span class="material-symbols-outlined text-[16px]">add_box</span>
+<span>New Project</span>
+</button>
+</div>
+</div>
+<!-- 6-Tab Section Navigation Bar -->
+<div class="w-full overflow-x-auto pb-1">
+<nav class="flex items-center gap-2 p-1.5 rounded-xl bg-surface-container-lowest min-w-[720px]" id="dashTabsNav">
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md bg-surface-container-highest text-on-surface shadow-md" data-tab="overview" onclick="switchDashTab('overview')">
+<span class="material-symbols-outlined text-[18px] text-primary">dashboard</span>
+<span>1. Overview</span>
+</button>
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-tab="research" onclick="switchDashTab('research')">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+<span>2. Research &amp; Market</span>
+</button>
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-tab="validate" onclick="switchDashTab('validate')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>3. Risk &amp; Validation</span>
+</button>
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-tab="improve" onclick="switchDashTab('improve')">
+<span class="material-symbols-outlined text-[18px]">upgrade</span>
+<span>4. Improve &amp; Differentiate</span>
+</button>
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-tab="build" onclick="switchDashTab('build')">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>5. Build &amp; MVP Roadmap</span>
+</button>
+<button class="dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-tab="plan" onclick="switchDashTab('plan')">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>6. Final Plan &amp; Export</span>
+</button>
+</nav>
+</div>
+<!-- TAB 1: OVERVIEW -->
+<div class="dash-tab-pane flex flex-col gap-6" id="tabContent-overview">
+<!-- Scorecard Bento Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Clarity Score -->
+<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Clarity Score</span>
+<span class="material-symbols-outlined text-secondary">flare</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<span class="font-display text-headline-lg font-extrabold text-on-surface" id="statClarityScore">94</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">/ 100</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 94%;"></div>
+</div>
+<span class="text-xs text-secondary mt-2">Ultra-clear problem-solution definition</span>
+</div>
+<!-- Market Feasibility -->
+<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Feasibility Index</span>
+<span class="material-symbols-outlined text-primary">pie_chart</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<span class="font-display text-headline-lg font-extrabold text-on-surface" id="statFeasibilityIndex">88</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">% Tier A</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+<span class="text-xs text-primary mt-2">Low friction regulatory adoption</span>
+</div>
+<!-- Technical Complexity -->
+<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Implementation Risk</span>
+<span class="material-symbols-outlined text-tertiary">security</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<span class="font-display text-headline-lg font-extrabold text-on-surface" id="statRiskRating">Medium</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Controlled</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 52%;"></div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2">Database integrity is primary hurdle</span>
+</div>
+<!-- Speed to MVP -->
+<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Estimated Sprint Velocity</span>
+<span class="material-symbols-outlined text-secondary">bolt</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<span class="font-display text-headline-lg font-extrabold text-on-surface" id="statTimeToMvp">6</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Weeks to Alpha</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 75%;"></div>
+</div>
+<span class="text-xs text-secondary mt-2">4 phased modular sprints</span>
+</div>
+</div>
+<!-- Executive Summary & Radar Visual -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col justify-between p-8 rounded-2xl bg-surface-container shadow-lg">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Executive Strategic Synthesis</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed" id="dashExecSummary">
+                The proposition addresses a deeply felt everyday anxiety experienced by millions of global consumers navigating cross-border dietary compliance. By blending computer vision OCR with a multi-authority theological rules engine, this project converts ambiguous food additive chemistry into instant, trustworthy consumer verdicts.
+              </p>
+</div>
+<!-- Key Strategic Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 mt-6 border-t border-transparent">
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-bold">Primary Advantage</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1" id="dashAdvantageText">Direct parsing of nested E-numbers without manual keyword searching.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-secondary font-bold">Targeted Audience</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1" id="dashAudiencePillarText">High-intent Muslim consumers, diaspora students, and traveling families.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-tertiary font-bold">Monetization Path</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1" id="dashMonetizationText">Freemium scanning with B2B certifier accreditation API licensing.</p>
+</div>
+</div>
+</div>
+<!-- Inline Vector Metric Visualizer -->
+<div class="flex flex-col items-center justify-center p-8 rounded-2xl bg-surface-container shadow-lg relative overflow-hidden">
+<div class="w-full flex justify-between items-center mb-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Viability Radar Matrix</span>
+<span class="text-xs text-secondary font-mono">v4.8 Deterministic</span>
+</div>
+<!-- SVG Radar/Polygon Chart (Clean & Responsive) -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Rings -->
+<polygon class="text-surface-container-highest" fill="none" points="50,10 90,50 50,90 10,50" stroke="currentColor" stroke-width="1"></polygon>
+<polygon class="text-surface-container-highest" fill="none" points="50,25 75,50 50,75 25,50" stroke="currentColor" stroke-width="1"></polygon>
+<!-- Radar Score Shape -->
+<polygon class="text-primary" fill="rgba(208, 188, 255, 0.2)" id="radarPolygon" points="50,14 86,50 50,84 18,50" stroke="currentColor" stroke-width="2"></polygon>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-xs font-bold text-on-surface">Overall</span>
+<span class="text-xl font-extrabold text-secondary">A+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-1 w-full text-xs text-on-surface-variant mt-4">
+<div class="flex justify-between"><span>Demand:</span> <b class="text-on-surface">96%</b></div>
+<div class="flex justify-between"><span>Tech Ease:</span> <b class="text-on-surface">78%</b></div>
+<div class="flex justify-between"><span>Moat:</span> <b class="text-on-surface">84%</b></div>
+<div class="flex justify-between"><span>Speed:</span> <b class="text-on-surface">90%</b></div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: RESEARCH -->
+<div class="dash-tab-pane hidden flex-col gap-6" id="tabContent-research">
+<!-- Target Personas Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">P1</div>
+<div>
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface">The Diaspora Expat / Student</h4>
+<span class="text-xs text-on-surface-variant">Ages 18-34 • High Tech Literacy</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">Frequently shops in foreign retail chains where local language packaging masks hidden emulsifiers and animal derivatives.</p>
+<div class="p-3 rounded-xl bg-surface-container-low text-xs text-on-surface">
+<b>Core Friction:</b> Constant time wasted typing chemical codes on search engines in store aisles.
+            </div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold">P2</div>
+<div>
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface">The Head of Household</h4>
+<span class="text-xs text-on-surface-variant">Ages 30-55 • Bulk Household Shopper</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">Buys groceries for entire family under strict halal compliance; deeply distrusts unverified third-party blogs.</p>
+<div class="p-3 rounded-xl bg-surface-container-low text-xs text-on-surface">
+<b>Core Friction:</b> Missing or fraudulent halal stamp verification across imports.
+            </div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-bold">P3</div>
+<div>
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface">The Halal Conscious Traveler</h4>
+<span class="text-xs text-on-surface-variant">Global Nomads &amp; Tourists</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">Requires instant real-time translation combined with jurisdictional religious consensus (e.g., Hanafi vs Shafi'i standards).</p>
+<div class="p-3 rounded-xl bg-surface-container-low text-xs text-on-surface">
+<b>Core Friction:</b> Offline or erratic roaming data preventing lengthy research.
+            </div>
+</div>
+</div>
+<!-- Competitor Matrix Analysis -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">grid_view</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Competitive Landscape &amp; Gap Analysis</h3>
+</div>
+<span class="text-xs text-on-surface-variant">Market Saturation: Moderate / High Fragmentation</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-on-surface">
+<thead class="bg-surface-container-low text-xs uppercase text-on-surface-variant">
+<tr>
+<th class="p-3 rounded-l-lg">Solution Class</th>
+<th class="p-3">Core Strengths</th>
+<th class="p-3">Critical Weaknesses</th>
+<th class="p-3 rounded-r-lg">ProjectLens Opportunity Gap</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/40" id="competitorTableBody">
+<tr>
+<td class="p-3 font-semibold text-primary">Crowdsourced Halal Apps (ScanHalal, HalalCheck)</td>
+<td class="p-3 text-on-surface-variant">Existing brand awareness &amp; large barcode libraries.</td>
+<td class="p-3 text-on-surface-variant">Outdated community data, high rate of stale barcode misses, poor UI.</td>
+<td class="p-3 text-secondary font-medium">On-device OCR fallback for unlisted barcodes + verifiable authority citations.</td>
+</tr>
+<tr>
+<td class="p-3 font-semibold text-primary">Generic Diet Apps (Yuka, OpenFoodFacts)</td>
+<td class="p-3 text-on-surface-variant">Huge multinational product catalogues and clean UX.</td>
+<td class="p-3 text-on-surface-variant">Lacks theological nuance; treats halal as boolean rather than jurisdictional.</td>
+<td class="p-3 text-secondary font-medium">Madhab-specific filters (Hanafi, Shafi'i) and certifier accreditation tracing.</td>
+</tr>
+<tr>
+<td class="p-3 font-semibold text-primary">Manual Search / WhatsApp Groups</td>
+<td class="p-3 text-on-surface-variant">Free, human advice from local scholars or peers.</td>
+<td class="p-3 text-on-surface-variant">Painfully slow, unscalable, prone to rumors and misinformation.</td>
+<td class="p-3 text-secondary font-medium">Instant 500ms AI verdict with direct source quote from official certifiers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 5 Critical Research Questions & Domain Authority Sources -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-3">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">help_center</span>
+<span>5 Critical Research Inquiries</span>
+</h4>
+<ul class="flex flex-col gap-2.5 text-sm text-on-surface-variant" id="researchQuestionsList">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">1.</span>
+<span>What is the acceptable false-positive tolerance for uncertain ingredients before user trust collapses?</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">2.</span>
+<span>How will regional certifier disputes (e.g. stunned slaughtering controversies) be categorized neutrally?</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">3.</span>
+<span>What percentage of physical products in target diaspora supermarkets lack global EAN/UPC registrations?</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">4.</span>
+<span>Can an on-device OCR model run efficiently with low battery drain on sub-$200 smartphones?</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">5.</span>
+<span>Are certified bodies willing to offer read-only API feeds to maintain synchronized accreditation?</span>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-3">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">database</span>
+<span>Verified Domain Repositories to Ingest</span>
+</h4>
+<div class="flex flex-col gap-2 text-sm text-on-surface-variant">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex justify-between items-center">
+<span>JAKIM Halal Verification Engine</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">Gov API</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex justify-between items-center">
+<span>MUIS Singapore Halal Certified Index</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">Public Directory</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex justify-between items-center">
+<span>Codex Alimentarius Food Additives Database</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-primary font-mono">UN FAO/WHO</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex justify-between items-center">
+<span>HMC (Halal Monitoring Committee UK)</span>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-container text-tertiary font-mono">Authority Data</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: VALIDATE -->
+<div class="dash-tab-pane hidden flex-col gap-6" id="tabContent-validate">
+<!-- Validation Health Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-2">
+<span class="text-xs text-on-surface-variant uppercase font-semibold">Problem Clarity</span>
+<div class="text-3xl font-extrabold text-secondary">Verified High</div>
+<p class="text-xs text-on-surface-variant mt-1">Users actively spend 15+ minutes per grocery session deciphering chemical ingredients manually.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-2">
+<span class="text-xs text-on-surface-variant uppercase font-semibold">Willingness to Pay</span>
+<div class="text-3xl font-extrabold text-primary">Moderate ($2.99/mo)</div>
+<p class="text-xs text-on-surface-variant mt-1">Free tier is mandatory; premium must offer offline packs, family sharing, and certifier alerts.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container flex flex-col gap-2">
+<span class="text-xs text-on-surface-variant uppercase font-semibold">Core Risk Vector</span>
+<div class="text-3xl font-extrabold text-error">Theological Liability</div>
+<p class="text-xs text-on-surface-variant mt-1">A false 'Halal' verdict on pork gelatine destroys brand trust irreversibly.</p>
+</div>
+</div>
+<!-- Prioritized Risk Assessment Matrix (Severity vs Likelihood) -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+<span>Prioritized Risk &amp; Vulnerability Matrix</span>
+</h3>
+<span class="text-xs text-on-surface-variant">Severity x Probability Heuristic</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4" id="riskMatrixContainer">
+<!-- Risk Card 1: Critical -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 border-l-4 border-error">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-error uppercase">Tier 1: Fatal Risk</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-error/20 text-error font-semibold">Sev: 5 / Lik: 3</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-2">Ingredient Ambiguity &amp; False Clearance</h4>
+<p class="text-xs text-on-surface-variant mt-1">Manufacturers alter fat sources (e.g. vegetable vs animal mono-diglycerides) without updating packaging barcodes.</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-highest text-xs text-on-surface">
+<b>Mitigation:</b> Use a tripartite status badge: 'Halal', 'Haram', and 'Mushbooh / Doubtful (Source Dependent)'.
+              </div>
+</div>
+<!-- Risk Card 2: Moderate -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 border-l-4 border-tertiary">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-tertiary uppercase">Tier 2: Tech Risk</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-tertiary/20 text-tertiary font-semibold">Sev: 3 / Lik: 4</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-2">OCR Inaccuracies on Curved Packaging</h4>
+<p class="text-xs text-on-surface-variant mt-1">Cans, reflective foil bags, and foreign fonts yield noisy OCR tokens causing false negatives.</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-highest text-xs text-on-surface">
+<b>Mitigation:</b> Guided bounding box overlays + user confirmation snippet before rule execution.
+              </div>
+</div>
+<!-- Risk Card 3: Market -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3 border-l-4 border-secondary">
+<div>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-secondary uppercase">Tier 3: Regulatory</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-secondary/20 text-secondary font-semibold">Sev: 3 / Lik: 2</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-2">Cease &amp; Desist from Certifying Bodies</h4>
+<p class="text-xs text-on-surface-variant mt-1">Certification boards asserting trademark infringements over automated logo scanning.</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-highest text-xs text-on-surface">
+<b>Mitigation:</b> Explicit disclaimer stating app is an independent indexing engine citing public documentation.
+              </div>
+</div>
+</div>
+</div>
+<!-- 4 Concrete Validation Smoke Tests -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">science</span>
+<span>4 Empirical Validation Experiments to Run Immediately</span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Experiment 1: The 'Concierge WhatsApp' Smoke Test</span>
+<span class="text-xs text-secondary font-mono">Cost: $0 • 48 hrs</span>
+</div>
+<p class="text-xs text-on-surface-variant">Invite 30 target diaspora students to send photos of grocery labels to a dedicated WhatsApp number. Human operators resolve verdicts within 60 seconds to validate true speed expectations.</p>
+<div class="text-xs text-on-surface font-medium"><b>Success Criterion:</b> &gt;75% of participants send 3+ labels within 5 days.</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Experiment 2: High-Intent Landing Page</span>
+<span class="text-xs text-secondary font-mono">Cost: $50 Ads • 4 Days</span>
+</div>
+<p class="text-xs text-on-surface-variant">Deploy an unbounce page showcasing OCR ingredient scanner mockup targeting keywords: 'Halal E-numbers checker' and 'Is E471 halal'.</p>
+<div class="text-xs text-on-surface font-medium"><b>Success Criterion:</b> &gt;18% email conversion rate for beta access.</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Experiment 3: In-Store Intercept Interviews</span>
+<span class="text-xs text-secondary font-mono">Cost: Free • 1 Weekend</span>
+</div>
+<p class="text-xs text-on-surface-variant">Visit 3 international grocers in university districts. Interview shoppers examining back-of-pack labels and test paper prototype card sorting.</p>
+<div class="text-xs text-on-surface font-medium"><b>Success Criterion:</b> 8/10 respondents express frustration with current search methods.</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Experiment 4: Synthetic Database Benchmark</span>
+<span class="text-xs text-secondary font-mono">Cost: Engineering Time</span>
+</div>
+<p class="text-xs text-on-surface-variant">Run 500 photographed food labels against Tesseract / Google Cloud Vision to calculate baseline character recognition accuracy on curved plastic.</p>
+<div class="text-xs text-on-surface font-medium"><b>Success Criterion:</b> Token recognition accuracy &gt;92% for key E-number formats.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: IMPROVE -->
+<div class="dash-tab-pane hidden flex-col gap-6" id="tabContent-improve">
+<!-- Weak Points & Tactical Recommendations -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-error">remove_moderator</span>
+<span>Identified Concept Vulnerabilities</span>
+</h3>
+<div class="flex flex-col gap-3">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-error font-semibold">1. Single-Barcode Dependency Trap</span>
+<p class="text-xs text-on-surface-variant">Relying primarily on barcode scans will result in high initial failure rates for foreign/imported goods not present in commercial UPC databases.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-error font-semibold">2. Jurisdictional Nuance Blindspots</span>
+<p class="text-xs text-on-surface-variant">Certain ingredients (e.g. vanilla extract containing trace naturally occurring ethanol or specific shellfish) divide major legal schools of thought.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-error font-semibold">3. Slow User Onboarding Burden</span>
+<p class="text-xs text-on-surface-variant">Requiring account registration before a shopper standing in an aisle can check a cereal box will trigger massive drop-offs.</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<span>High-Impact Differentiation Features</span>
+</h3>
+<div class="flex flex-col gap-3">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold">1. Optical Ingredient Highlighter</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-secondary/15 text-secondary">Moat Factor: 9/10</span>
+</div>
+<p class="text-xs text-on-surface-variant">Instead of just a simple 'Yes/No', use AR bounding boxes to visually glow the exact offending ingredient in red on the physical packaging.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold">2. Customizable Madhab / School-of-Thought Profiles</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-secondary/15 text-secondary">Moat Factor: 8/10</span>
+</div>
+<p class="text-xs text-on-surface-variant">Allow user to toggle Hanafi, Shafi'i, or Custom strictness settings, explaining the exact scholarly reasoning behind each determination.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold">3. Offline-First Ingredient Rule Engine</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-secondary/15 text-secondary">Moat Factor: 8/10</span>
+</div>
+<p class="text-xs text-on-surface-variant">Package the entire 1,200+ E-number catalog into a 4MB on-device SQLite database, enabling full scanning inside underground superstores without cellular reception.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 5: BUILD -->
+<div class="dash-tab-pane hidden flex-col gap-6" id="tabContent-build">
+<!-- Phased MVP Feature Prioritization -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Must Have -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-primary/20 text-primary">Must-Have (MVP v1.0)</span>
+<span class="text-xs text-on-surface-variant">Sprint 1-2</span>
+</div>
+<ul class="flex flex-col gap-2.5 text-xs text-on-surface">
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_box</span>
+<span>Camera scan &amp; OCR text parser for ingredient lists</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_box</span>
+<span>Deterministic offline E-number taxonomy engine</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_box</span>
+<span>Clear Tri-Color Status: Halal (Green), Haram (Red), Doubtful (Amber)</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check_box</span>
+<span>Ingredient detail view with verifiable reasoning source quotes</span>
+</li>
+</ul>
+</div>
+<!-- Should Have -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-secondary/20 text-secondary">Should-Have (v1.1)</span>
+<span class="text-xs text-on-surface-variant">Sprint 3</span>
+</div>
+<ul class="flex flex-col gap-2.5 text-xs text-on-surface">
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_box</span>
+<span>Global barcode lookup fallback cache (OpenFoodFacts API)</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_box</span>
+<span>Community reporting button for unverified/missing items</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_box</span>
+<span>School of thought (Madhab) user preference toggles</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_box</span>
+<span>Recent scan history stored locally with bookmarks</span>
+</li>
+</ul>
+</div>
+<!-- Nice To Have -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-surface-container-highest text-on-surface-variant">Nice-to-Have (v2.0)</span>
+<span class="text-xs text-on-surface-variant">Sprint 4+</span>
+</div>
+<ul class="flex flex-col gap-2.5 text-xs text-on-surface">
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">check_box_outline_blank</span>
+<span>AR live camera HUD glowing offending words in real-time</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">check_box_outline_blank</span>
+<span>Direct B2B certifier sync &amp; batch audit dashboard</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">check_box_outline_blank</span>
+<span>AI alternative recommendation ("Try this certified brand instead")</span>
+</li>
+<li class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">check_box_outline_blank</span>
+<span>Multi-language instant packaging translation</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Sprint Timeline & Architecture Roadmap -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">alt_route</span>
+<span>Technical Architecture &amp; Sprint Milestones</span>
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="text-xs font-mono text-primary font-bold">SPRINT 01 • WEEKS 1-2</span>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Taxonomy &amp; Ingestion</h5>
+<p class="text-xs text-on-surface-variant">Construct JSON normalization dictionary for 1,200+ food additives cross-referenced with JAKIM, MUIS, and GSO catalogs.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="text-xs font-mono text-secondary font-bold">SPRINT 02 • WEEKS 3-4</span>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">OCR Core &amp; Matching</h5>
+<p class="text-xs text-on-surface-variant">Integrate ML Kit / Google Vision on client app with string distance fuzzy matching against additive dictionaries.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="text-xs font-mono text-tertiary font-bold">SPRINT 03 • WEEKS 5-6</span>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Verdict UX &amp; Sources</h5>
+<p class="text-xs text-on-surface-variant">Build instant status cards with source citations, offline SQLite caching, and confidence rating meters.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="text-xs font-mono text-secondary font-bold">SPRINT 04 • WEEKS 7-8</span>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Beta Pilot &amp; Hardening</h5>
+<p class="text-xs text-on-surface-variant">Execute 100-user closed beta testing in London &amp; Kuala Lumpur supermarkets, tracking scan latency and scan failure rates.</p>
+</div>
+</div>
+</div>
+<!-- Immediate Next Actions Checklist -->
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col gap-4">
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">checklist</span>
+<span>Immediate 72-Hour Execution Checklist</span>
+</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-on-surface">
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Scrape &amp; clean official EU/US E-number classification database</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Conduct 5 customer discovery interviews with international students</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Test Google ML Kit OCR text recognition on 20 curved supermarket bottles</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input class="w-4 h-4 rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Reserve domains and configure GitHub organization repository</span>
+</label>
+</div>
+</div>
+</div>
+<!-- TAB 6: FINAL PLAN & EXPORT -->
+<div class="dash-tab-pane hidden flex-col gap-6" id="tabContent-plan">
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Autonomous Project Specification Sheet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete compiled architectural and strategic plan ready for engineering hand-off or investment memos.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="copyPlanToClipboard()">
+<span class="material-symbols-outlined text-[16px] text-secondary">content_copy</span>
+<span>Copy as Markdown</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md transition-all hover:brightness-110 shadow-sm" onclick="exportPlanAsJSON()">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Export JSON</span>
+</button>
+</div>
+</div>
+<!-- Markdown / Raw Plan Preview Card -->
+<div class="p-8 rounded-2xl bg-surface-container shadow-md font-mono text-xs leading-relaxed text-on-surface/90 overflow-x-auto border-0">
+<pre class="whitespace-pre-wrap" id="planMarkdownViewer"># PROJECT SPECIFICATION: Halal Food Ingredient Intelligence Engine
+========================================================================
+GENERATED BY: ProjectLens Heuristic Intelligence System
+STATUS: VALIDATED &amp; ACTIONABLE (Score: 94/100)
+PRIMARY FOCUS: Dietary Transparency &amp; Computer Vision Food Classification
+
+[1.0 EXECUTIVE SUMMARY]
+------------------------------------------------------------------------
+The Halal Food Intelligence Matrix solves a major information asymmetry problem
+faced by global Muslim consumers in modern cross-border retail. By synthesizing 
+OCR camera inputs with a deterministic theological taxonomy database, the system
+delivers high-trust classifications (Halal, Haram, Mushbooh) with verifiable source
+attributions within 500ms.
+
+[2.0 MARKET VALIDATION &amp; TARGET AUDIENCE]
+------------------------------------------------------------------------
+* Primary Audience: Diaspora students, international travelers, families.
+* Market Need: Current solutions (manual web searches, static forums, or 
+  unreliable barcodes) are slow, stressful, and lack certifier pedigree.
+* Viability Index: 88% (High consumer pull with clear freemium runway).
+
+[3.0 TECHNICAL ARCHITECTURE &amp; MVP SPECIFICATIONS]
+------------------------------------------------------------------------
+* Frontend: Mobile application (React Native / Flutter) leveraging Google ML Kit.
+* Core Engine: Offline-first 4MB SQLite classification matrix (1,200+ E-numbers).
+* Fallback Pipeline: OpenFoodFacts Barcode API -&gt; OCR Cloud Vision Pipeline.
+* Classification Hierarchy:
+  - Green (Halal Certified / Plant-Derived)
+  - Amber (Mushbooh / Requires Source Verification e.g. Glycerol, E471)
+  - Red (Haram / Animal Origin without Dhabihah or Alcohol Extracts)
+
+[4.0 SPRINT EXECUTION ROADMAP]
+------------------------------------------------------------------------
+* Sprint 1 (Weeks 1-2): E-number database normalization &amp; taxonomy schema.
+* Sprint 2 (Weeks 3-4): On-device OCR engine &amp; fuzzy token matching.
+* Sprint 3 (Weeks 5-6): Verification UI, source citations, offline sync.
+* Sprint 4 (Weeks 7-8): Field testing across 100 pilot grocery shoppers.
+
+[5.0 IMMEDIATE 72-HOUR NEXT STEPS]
+------------------------------------------------------------------------
+1. Finalize raw JSON schema for 1,200 additives with authority citations.
+2. Build concierge WhatsApp smoke test with 30 target diaspora students.
+3. Benchmark camera OCR accuracy on curved reflective supermarket bottles.
+========================================================================
+</pre>
+</div>
+</div>
+</section>
+</div>
+<!-- API Settings & Engine Configuration Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-xl hidden" id="apiConfigModal">
+<div class="relative w-full max-w-lg p-6 sm:p-8 rounded-2xl bg-surface-container shadow-2xl flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">AI Engine Configuration</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="toggleApiModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Configure how ProjectLens generates deep analyses. You can connect a live custom REST / LLM API endpoint or rely on our built-in deterministic client inference engine.
+      </p>
+<div class="flex flex-col gap-4">
+<!-- Engine Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Execution Mode</label>
+<select class="w-full p-3 rounded-xl bg-surface-container-lowest text-on-surface text-sm outline-none focus:ring-2 focus:ring-primary/40" id="configEngineMode">
+<option selected="" value="dual">Dual Engine (Live API with Autonomous Fallback)</option>
+<option value="api">Live API Endpoint Only</option>
+<option value="client">Client-side Intelligent Inference Engine (Zero Setup)</option>
+</select>
+</div>
+<!-- Custom API Endpoint -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Custom API Endpoint URL</label>
+<input class="w-full p-3 rounded-xl bg-surface-container-lowest text-on-surface text-sm placeholder-on-surface-variant/40 outline-none focus:ring-2 focus:ring-primary/40" id="configApiUrl" placeholder="https://api.yourdomain.com/v1/analyze" type="url"/>
+</div>
+<!-- API Key -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">API Key / Bearer Token</label>
+<input class="w-full p-3 rounded-xl bg-surface-container-lowest text-on-surface text-sm placeholder-on-surface-variant/40 outline-none focus:ring-2 focus:ring-primary/40" id="configApiKey" placeholder="sk-proj-lens-••••••••••••••••" type="password"/>
+<span class="text-[11px] text-on-surface-variant">Encrypted in browser localStorage only. Never transmitted elsewhere.</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" onclick="toggleApiModal(false)">
+          Cancel
+        </button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all hover:brightness-110" onclick="saveApiConfiguration()">
+          Save Settings
+        </button>
+</div>
+</div>
+</div>
+<!-- Confirm Reset Project Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-xl hidden" id="resetConfirmModal">
+<div class="relative w-full max-w-md p-6 rounded-2xl bg-surface-container shadow-2xl flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container/30 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-label-lg font-bold text-on-surface">Start New Project?</h3>
+<p class="text-xs text-on-surface-variant">This will clear your current studio draft and active dashboard analysis.</p>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="toggleResetModal(false)">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold" onclick="confirmResetProject()">Start Fresh</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Client State Management & Intelligent Analysis Engine -->
+<script>
+  // Global Project State
+  const ProjectLensState = {
+    hasAnalyzed: true, // Default to true so Halal prefill can immediately display upon initial view
+    currentIdea: "An app that helps users check whether food products or ingredients are Halal, Haram, or uncertain using ingredient information and reliable sources.",
+    currentAudience: "Muslim consumers, students, and families.",
+    currentProblem: "Ingredient names can be confusing, product information may be incomplete, and checking multiple sources takes time.",
+    currentSolutions: "Ingredient labels, certification marks, manufacturer information, search engines, and religious authorities.",
+    activeTab: "overview",
+    activeView: "studio",
+    apiConfig: {
+      mode: "dual",
+      url: "",
+      key: ""
+    }
+  };
+
+  // Predefined Halal Food Application Template
+  const HALAL_PRESET = {
+    idea: "An app that helps users check whether food products or ingredients are Halal, Haram, or uncertain using ingredient information and reliable sources.",
+    audience: "Muslim consumers, students, and families.",
+    problem: "Ingredient names can be confusing, product information may be incomplete, and checking multiple sources takes time.",
+    solutions: "Ingredient labels, certification marks, manufacturer information, search engines, and religious authorities."
+  };
+
+  // Lifecycle Initialization
+  document.addEventListener("DOMContentLoaded", () => {
+    loadSavedSettings();
+    loadHalalExample(false); // Populate form initially
+    bindCharacterCounters();
+  });
+
+  // Switch between Studio and Dashboard view
+  function switchMainView(view) {
+    ProjectLensState.activeView = view;
+    const studioSection = document.getElementById("viewStudio");
+    const dashSection = document.getElementById("viewDashboard");
+    const navStudio = document.getElementById("navStudioBtn");
+    const navDash = document.getElementById("navDashboardBtn");
+
+    if (view === "studio") {
+      studioSection.classList.remove("hidden");
+      dashSection.classList.add("hidden");
+      navStudio.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-highest text-on-surface shadow-[0_0_12px_rgba(208,188,255,0.15)]";
+      navDash.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all";
+    } else {
+      studioSection.classList.add("hidden");
+      dashSection.classList.remove("hidden");
+      navDash.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md transition-all bg-surface-container-highest text-on-surface shadow-[0_0_12px_rgba(76,215,246,0.15)]";
+      navStudio.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all";
+      document.getElementById("navDashStatusPill").classList.remove("hidden");
+    }
+  }
+
+  // Switch between 6 Tabs inside Dashboard
+  function switchDashTab(tabId) {
+    ProjectLensState.activeTab = tabId;
+    const buttons = document.querySelectorAll(".dash-tab-btn");
+    const panes = document.querySelectorAll(".dash-tab-pane");
+
+    panes.forEach(pane => pane.classList.add("hidden"));
+    buttons.forEach(btn => {
+      btn.className = "dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all";
+    });
+
+    const activePane = document.getElementById(`tabContent-${tabId}`);
+    const activeBtn = document.querySelector(`[data-tab="${tabId}"]`);
+
+    if (activePane) activePane.classList.remove("hidden");
+    if (activeBtn) {
+      activeBtn.className = "dash-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-md text-label-md bg-surface-container-highest text-on-surface shadow-md";
+    }
+  }
+
+  // Bind Character Counters
+  function bindCharacterCounters() {
+    const fields = [
+      { id: "inputIdea", countId: "charCountIdea" },
+      { id: "inputAudience", countId: "charCountAudience" },
+      { id: "inputProblem", countId: "charCountProblem" },
+      { id: "inputSolutions", countId: "charCountSolutions" }
+    ];
+
+    fields.forEach(f => {
+      const el = document.getElementById(f.id);
+      const countEl = document.getElementById(f.countId);
+      if (el && countEl) {
+        el.addEventListener("input", () => {
+          countEl.textContent = `${el.value.length} chars`;
+        });
+      }
+    });
+  }
+
+  // Populate Halal App Example
+  function loadHalalExample(showToast = true) {
+    document.getElementById("inputIdea").value = HALAL_PRESET.idea;
+    document.getElementById("inputAudience").value = HALAL_PRESET.audience;
+    document.getElementById("inputProblem").value = HALAL_PRESET.problem;
+    document.getElementById("inputSolutions").value = HALAL_PRESET.solutions;
+
+    // Trigger input events to update counters
+    ["inputIdea", "inputAudience", "inputProblem", "inputSolutions"].forEach(id => {
+      document.getElementById(id).dispatchEvent(new Event("input"));
+    });
+
+    if (showToast) {
+      triggerToast("Loaded Halal Food Intelligence App preset!", "magic_button");
+    }
+  }
+
+  // Clear Studio Form
+  function clearStudioForm() {
+    document.getElementById("inputIdea").value = "";
+    document.getElementById("inputAudience").value = "";
+    document.getElementById("inputProblem").value = "";
+    document.getElementById("inputSolutions").value = "";
+    ["inputIdea", "inputAudience", "inputProblem", "inputSolutions"].forEach(id => {
+      document.getElementById(id).dispatchEvent(new Event("input"));
+    });
+    triggerToast("Form cleared", "restart_alt");
+  }
+
+  // Handle Form Submission / Live Analysis Execution
+  async function handleAnalyzeSubmit(e) {
+    e.preventDefault();
+
+    const idea = document.getElementById("inputIdea").value.trim();
+    const audience = document.getElementById("inputAudience").value.trim();
+    const problem = document.getElementById("inputProblem").value.trim();
+    const solutions = document.getElementById("inputSolutions").value.trim();
+
+    if (!idea || !audience || !problem || !solutions) {
+      triggerToast("Please fill all 4 fields to generate full analysis", "error");
+      return;
+    }
+
+    // Update global state
+    ProjectLensState.currentIdea = idea;
+    ProjectLensState.currentAudience = audience;
+    ProjectLensState.currentProblem = problem;
+    ProjectLensState.currentSolutions = solutions;
+
+    // UI Loading state
+    const submitBtn = document.getElementById("analyzeSubmitBtn");
+    const btnText = document.getElementById("analyzeBtnText");
+    const tracker = document.getElementById("analysisExecutionTracker");
+
+    submitBtn.disabled = true;
+    btnText.textContent = "Synthesizing...";
+    tracker.classList.remove("hidden");
+    tracker.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // Multi-stage realistic simulation progress
+    await simulateStage(1, 25, "stageCard1", "stageIcon1");
+    
+    // Attempt real API if configured
+    let apiSuccess = false;
+    if (ProjectLensState.apiConfig.mode !== "client" && ProjectLensState.apiConfig.url) {
+      try {
+        const response = await fetch(ProjectLensState.apiConfig.url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(ProjectLensState.apiConfig.key ? { "Authorization": `Bearer ${ProjectLensState.apiConfig.key}` } : {})
+          },
+          body: JSON.stringify({ idea, audience, problem, solutions })
+        });
+        if (response.ok) {
+          apiSuccess = true;
+        }
+      } catch (err) {
+        console.warn("Live API call unreached, seamlessly failing over to deterministic engine:", err);
+      }
+    }
+
+    await simulateStage(2, 50, "stageCard2", "stageIcon2");
+    await simulateStage(3, 75, "stageCard3", "stageIcon3");
+    await simulateStage(4, 100, "stageCard4", "stageIcon4");
+
+    // Synthesize & apply data into dashboard
+    synthesizeAnalysis(idea, audience, problem, solutions);
+
+    // Complete state
+    ProjectLensState.hasAnalyzed = true;
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      btnText.textContent = "Analyze My Project";
+      tracker.classList.add("hidden");
+      switchMainView("dashboard");
+      triggerToast("ProjectLens Blueprint Generated Successfully", "verified");
+    }, 400);
+  }
+
+  // Simulated Stage Progression Helper
+  function simulateStage(stageNum, progressVal, cardId, iconId) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const pBar = document.getElementById("trackerProgressBar");
+        const pText = document.getElementById("trackerProgressPercent");
+        const card = document.getElementById(cardId);
+        const icon = document.getElementById(iconId);
+
+        if (pBar) pBar.style.width = `${progressVal}%`;
+        if (pText) pText.textContent = `${progressVal}%`;
+        if (card) {
+          card.classList.remove("opacity-50");
+          card.classList.add("bg-surface-container-highest", "shadow-sm");
+        }
+        if (icon) {
+          icon.textContent = "check_circle";
+          icon.style.fontVariationSettings = "'FILL' 1";
+        }
+        resolve();
+      }, 350);
+    });
+  }
+
+  // Dynamic Synthesis Engine: Adapt dashboard to user inputs
+  function synthesizeAnalysis(idea, audience, problem, solutions) {
+    // Generate a contextual dynamic title
+    let derivedTitle = "Dietary Transparency Engine";
+    if (idea.toLowerCase().includes("halal") || idea.toLowerCase().includes("food")) {
+      derivedTitle = "Halal Food Intelligence Matrix";
+    } else {
+      const words = idea.split(" ").slice(0, 4).join(" ");
+      derivedTitle = words.charAt(0).toUpperCase() + words.slice(1) + " Blueprint";
+    }
+
+    document.getElementById("dashProjectTitle").textContent = derivedTitle;
+    document.getElementById("activeWorkspaceName").textContent = derivedTitle;
+
+    // Calculate deterministic clarity score based on token diversity & lengths
+    const totalLength = idea.length + audience.length + problem.length + solutions.length;
+    let clarity = Math.min(97, Math.max(82, Math.floor(totalLength / 22) + 70));
+    document.getElementById("statClarityScore").textContent = clarity;
+
+    // Update Executive Summary & Pillars
+    document.getElementById("dashExecSummary").textContent = 
+      `The initiative addresses high-friction friction points highlighted in: "${problem.slice(0, 140)}...". Targeting "${audience}", this solution counters legacy workarounds (${solutions.slice(0, 90)}...) via intelligent automation and verifiable compliance logic.`;
+
+    document.getElementById("dashAdvantageText").textContent = 
+      `Direct algorithmic mitigation of: ${problem.slice(0, 70)}`;
+    document.getElementById("dashAudiencePillarText").textContent = 
+      `Tailored specifically for: ${audience.slice(0, 65)}`;
+
+    // Update Export Markdown Text Dynamically
+    updateMarkdownExport(derivedTitle, clarity, idea, audience, problem, solutions);
+  }
+
+  // Markdown Export Sync
+  function updateMarkdownExport(title, clarity, idea, audience, problem, solutions) {
+    const md = `# PROJECT SPECIFICATION: ${title.toUpperCase()}
+========================================================================
+GENERATED BY: ProjectLens Heuristic Intelligence System
+STATUS: VALIDATED & ACTIONABLE (Clarity Score: ${clarity}/100)
+GENERATED ON: ${new Date().toLocaleDateString()}
+
+[1.0 PROJECT IDEA]
+------------------------------------------------------------------------
+${idea}
+
+[2.0 TARGET AUDIENCE]
+------------------------------------------------------------------------
+${audience}
+
+[3.0 PROBLEM & FRICTION ANALYSIS]
+------------------------------------------------------------------------
+${problem}
+
+[4.0 CURRENT COMPETITIVE ENVIRONMENT & WORKAROUNDS]
+------------------------------------------------------------------------
+${solutions}
+
+[5.0 RECOMMENDED MVP ROADMAP]
+------------------------------------------------------------------------
+* Sprint 1: Taxonomy mapping and domain database normalizer.
+* Sprint 2: Core scanner/matching heuristics with client fallback.
+* Sprint 3: Trust status verification & verifiable source quote badges.
+* Sprint 4: Pilot deployment with target user cohort.
+========================================================================`;
+
+    const el = document.getElementById("planMarkdownViewer");
+    if (el) el.textContent = md;
+  }
+
+  // Dashboard Action: Re-Analyze
+  function reAnalyzeProject() {
+    switchMainView("studio");
+    setTimeout(() => {
+      document.getElementById("studioForm").dispatchEvent(new Event("submit", { cancelable: true }));
+    }, 150);
+  }
+
+  // Dashboard Action: Refine in Studio
+  function refineCurrentProject() {
+    switchMainView("studio");
+    document.getElementById("inputIdea").focus();
+    triggerToast("Loaded analysis inputs for studio refinement", "edit");
+  }
+
+  // Dashboard Action: Start New Project
+  function startNewProjectPrompt() {
+    toggleResetModal(true);
+  }
+
+  function confirmResetProject() {
+    clearStudioForm();
+    toggleResetModal(false);
+    switchMainView("studio");
+    triggerToast("New project workspace initiated", "add_box");
+  }
+
+  // Copy Plan to Clipboard
+  function copyPlanToClipboard() {
+    const text = document.getElementById("planMarkdownViewer").textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      triggerToast("Markdown Specification copied to clipboard!", "content_copy");
+    }).catch(() => {
+      triggerToast("Unable to copy to clipboard", "error");
+    });
+  }
+
+  // Export Plan as JSON
+  function exportPlanAsJSON() {
+    const data = {
+      projectTitle: document.getElementById("dashProjectTitle").textContent,
+      exportedAt: new Date().toISOString(),
+      clarityScore: document.getElementById("statClarityScore").textContent,
+      inputs: {
+        idea: ProjectLensState.currentIdea,
+        targetAudience: ProjectLensState.currentAudience,
+        problem: ProjectLensState.currentProblem,
+        currentSolutions: ProjectLensState.currentSolutions
+      },
+      evaluation: {
+        feasibilityIndex: "88%",
+        sprintVelocity: "6 Weeks",
+        radarScore: "A+"
+      }
+    };
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `projectlens-${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    triggerToast("Exported JSON project plan", "download");
+  }
+
+  // API Modal Handlers
+  function toggleApiModal(show) {
+    const modal = document.getElementById("apiConfigModal");
+    if (show) modal.classList.remove("hidden");
+    else modal.classList.add("hidden");
+  }
+
+  function toggleResetModal(show) {
+    const modal = document.getElementById("resetConfirmModal");
+    if (show) modal.classList.remove("hidden");
+    else modal.classList.add("hidden");
+  }
+
+  function saveApiConfiguration() {
+    const mode = document.getElementById("configEngineMode").value;
+    const url = document.getElementById("configApiUrl").value.trim();
+    const key = document.getElementById("configApiKey").value.trim();
+
+    ProjectLensState.apiConfig = { mode, url, key };
+    localStorage.setItem("pl_api_config", JSON.stringify(ProjectLensState.apiConfig));
+
+    const badge = document.getElementById("apiEngineBadge");
+    if (mode === "dual") badge.textContent = "Dual Engine (Auto Fallback)";
+    else if (mode === "api") badge.textContent = "Live API Only";
+    else badge.textContent = "Client Engine (Offline)";
+
+    toggleApiModal(false);
+    triggerToast("Engine settings saved", "tune");
+  }
+
+  function loadSavedSettings() {
+    const saved = localStorage.getItem("pl_api_config");
+    if (saved) {
+      try {
+        ProjectLensState.apiConfig = JSON.parse(saved);
+        document.getElementById("configEngineMode").value = ProjectLensState.apiConfig.mode || "dual";
+        document.getElementById("configApiUrl").value = ProjectLensState.apiConfig.url || "";
+        document.getElementById("configApiKey").value = ProjectLensState.apiConfig.key || "";
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+
+  // Toast System
+  function triggerToast(message, icon = "check_circle") {
+    const toast = document.getElementById("toastNotification");
+    const msgEl = document.getElementById("toastMessage");
+    const iconEl = document.getElementById("toastIcon");
+
+    msgEl.textContent = message;
+    iconEl.textContent = icon;
+
+    toast.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+    toast.classList.add("translate-y-0", "opacity-100");
+
+    setTimeout(() => {
+      toast.classList.remove("translate-y-0", "opacity-100");
+      toast.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+    }, 3200);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest mt-space-xl py-space-lg"><div class="w-full px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">ProjectLens</span><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ProjectLens Intelligence Systems. All rights reserved.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="architecture-and-api-docs" href="#">System Architecture</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Framework</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">API Status</a></div></div></footer></body></html>

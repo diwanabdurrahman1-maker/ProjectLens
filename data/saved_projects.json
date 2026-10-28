@@ -1,0 +1,337 @@
+[
+  {
+    "title": "Cadence: Adaptive Academic & Exam Orchestrator",
+    "tagline": "The zero-friction study planner that transforms syllabi into auto-rebalancing daily revision schedules.",
+    "clarityScore": 94,
+    "feasibilityIndex": 91,
+    "riskRating": "Medium",
+    "estimatedWeeksToAlpha": 6,
+    "radarScores": {
+      "demand": 92,
+      "techEase": 88,
+      "defensibility": 68,
+      "velocity": 85
+    },
+    "executiveSummary": "Student productivity apps represent a paradox: demand is perennial and massive, yet app mortality is extraordinarily high due to high manual data entry friction and seasonal churn. Cadence targets the fatal flaw of incumbent tools (Notion, Google Calendar, MyStudyLife)—manual task logging—by implementing multi-modal syllabus ingestion (PDF/OCR) coupled with an automated, dynamic spaced-repetition revision engine. By pivoting away from a passive calendar and toward an active 'academic copilot' that auto-adjusts when a student falls behind, Cadence solves the root cause of abandoned study routines.",
+    "strategicPillars": {
+      "primaryAdvantage": "Automated syllabus ingestion via Vision LLM and dynamic workload rebalancing using modified FSRS (Free Spaced Repetition Scheduler) algorithms.",
+      "targetAudiencePillar": "High-workload university STEM students and upper-secondary exam students (AP/IB/A-Levels) managing 4+ concurrent complex courses.",
+      "monetizationPath": "Freemium B2C model ($4.99/month or $39.99/year) with an institutional parent-gifting flow and campus ambassador referral mechanics."
+    },
+    "research": {
+      "personas": [
+        {
+          "id": "P1",
+          "title": "Overwhelmed College Sophomore (STEM Major)",
+          "demographics": "19-21 years old, dual engineering/math load, highly digital but runs on fragmented tools.",
+          "description": "Juggles 5 courses with staggered weekly problem sets, lab reports, and high-stakes midterms. Constantly tracks deadlines in Apple Notes, Google Calendar, and Canvas.",
+          "coreFriction": "Cramming fatigue and compounding panic; when they miss one scheduled study block, their entire static timetable collapses, forcing them into all-nighters."
+        },
+        {
+          "id": "P2",
+          "title": "Anxious High School Senior (AP/IB Candidate)",
+          "demographics": "16-18 years old, university-bound, heavy parental pressure, moderate digital native.",
+          "description": "Prepares for 4 simultaneous standardized exams 4 months away while balancing regular daily homework and extracurriculars.",
+          "coreFriction": "Inability to reverse-engineer long-term exam dates into structured, bite-sized daily revision tasks across disparate subjects."
+        }
+      ],
+      "competitorAnalysis": [
+        {
+          "solutionClass": "Generic To-Do & Calendar Apps (Notion, Todoist, Google Calendar)",
+          "coreStrengths": "Universal platform availability, reliable cloud sync, polished ecosystems.",
+          "criticalWeaknesses": "Zero academic context; requires exhausting manual input for every subtask; static schedules that break immediately when a deadline slips.",
+          "opportunityGap": "Build purpose-built academic semantics: course credit weightings, exam-countdown algorithms, and auto-scheduling."
+        },
+        {
+          "solutionClass": "Dedicated Student Planners (MyStudyLife, Shovel, Egenda)",
+          "coreStrengths": "Academic-first data model (semesters, courses, assignments, professors).",
+          "criticalWeaknesses": "Clunky dated interfaces, painful initial setup time (1-2 hours per semester), zero dynamic algorithmic rescheduling.",
+          "opportunityGap": "Instant 60-second course onboarding via syllabus PDF drag-and-drop parsing, coupled with automated buffer-day calculations."
+        },
+        {
+          "solutionClass": "Paper Planners & Notebooks",
+          "coreStrengths": "Zero digital distraction, tactile gratification, complete spatial layout freedom.",
+          "criticalWeaknesses": "Zero reminder capability, impossible to recalculate when timelines change, static and non-searchable.",
+          "opportunityGap": "Preserve high-leverage spatial 'week-at-a-glance' cognitive models without the penalty of manual ink rewriting."
+        }
+      ],
+      "marketResearchQuestions": [
+        "What is the quantitative drop-off rate of student planner apps between Week 1 and Week 4 of an academic semester?",
+        "Will students pay directly via app stores ($4.99/mo), or does customer acquisition require parental subsidization/student card billing?",
+        "What percentage of course syllabi across US/UK higher education are provided as parseable digital PDFs versus proprietary LMS walled gardens?",
+        "Does automated spaced repetition study scheduling improve self-reported student anxiety scores by a measurable margin (>20%)?",
+        "Which specific push notification triggers result in task execution rather than notification dismissal among students with ADHD/executive dysfunction?"
+      ],
+      "domainAuthoritySources": [
+        {
+          "name": "Canvas LMS REST API & Blackboard Learn REST API",
+          "type": "Educational LMS Integrations",
+          "description": "Direct OAuth endpoints to read-only ingest active course rosters, assignment dates, and grade weights directly into the user account."
+        },
+        {
+          "name": "RFC 5545 (iCalendar Specification)",
+          "type": "Open Protocol Standard",
+          "description": "Standardized two-way sync protocol to import institutional timetables and export dynamic study blocks directly to iOS/Google calendars."
+        },
+        {
+          "name": "FSRS (Free Spaced Repetition Scheduler) / SM-2 Algorithmic Research",
+          "type": "Cognitive Science Open Standard",
+          "description": "Validated mathematical decay models for scheduling spaced retrieval practice leading up to defined exam milestones."
+        }
+      ]
+    },
+    "validate": {
+      "problemClarity": {
+        "status": "Verified High",
+        "explanation": "Over 80% of secondary and tertiary students experience deadline stress, with the root cause being cognitive overload from manual planning rather than lack of study intent."
+      },
+      "willingnessToPay": {
+        "assessment": "Moderate",
+        "pricingModel": "Freemium with $4.99/mo or $39.99/yr 'Pro Exam Pass' (Targeted at exam crunch windows)",
+        "details": "Students are historically price-sensitive, but spend readily on study accelerators (e.g., Quizlet Plus, Chegg, Notion templates). Providing a free tier for basic task management and gating AI syllabus extraction and auto-rescheduling unlocks high conversion during midterms and finals."
+      },
+      "mainAssumptions": [
+        "Students will trust an AI engine to extract dates accurately from messy, unstructured syllabus documents.",
+        "The primary failure point of student organizers is setup friction, not lack of student discipline.",
+        "Dynamic auto-rescheduling reduces guilt/abandonment behavior when students miss scheduled study blocks."
+      ],
+      "potentialUserNeeds": [
+        "Frictionless 30-second bulk import of semester deadlines.",
+        "Proactive notifications that state exactly what to do right now, removing decision paralysis.",
+        "Adaptive schedule readjustment that gracefully absorbs skipped days without manual recalculation."
+      ],
+      "prioritizedRisks": [
+        {
+          "tier": "Tier 1: Fatal Risk",
+          "title": "Input Abandonment Churn",
+          "severity": 5,
+          "likelihood": 4,
+          "description": "Students download the app with high enthusiasm during syllabus week, but abandon it within 10 days because manual homework entry takes too much effort.",
+          "mitigation": "Lead product flow with single-click PDF/photo syllabus parsing that pre-populates the entire term's milestone calendar in under 60 seconds."
+        },
+        {
+          "tier": "Tier 2: Tech/Adoption Risk",
+          "title": "OCR/LLM Hallucination of Critical Exam Dates",
+          "severity": 5,
+          "likelihood": 2,
+          "description": "AI incorrectly parses an exam date or misses an assignment deadline, causing a student to fail an academic requirement and destroying product trust.",
+          "mitigation": "Implement a mandatory interactive confirmation drawer highlighting parsed dates against the original document snippet before committing to the schedule."
+        },
+        {
+          "tier": "Tier 3: Operational Risk",
+          "title": "Extreme Summer & Break Seasonality",
+          "severity": 3,
+          "likelihood": 5,
+          "description": "User retention and MRR plummet by 60-70% between June and August when university classes are not in session.",
+          "mitigation": "Annual billing pushed as default default tier; introduce summer project/internship/test prep (GRE, LSAT, MCAT, SAT) transition templates."
+        }
+      ],
+      "smokeTestExperiments": [
+        {
+          "title": "Experiment 1: The 'Syllabus to Schedule' Landing Page",
+          "costDuration": "$75 • 48 hrs",
+          "description": "Deploy a high-converting landing page offering a free tool: 'Drop your Course Syllabus PDF, get an iCal feed with optimized study blocks'. Run $75 targeted TikTok/Instagram ads targeting college students.",
+          "successCriterion": ">25% email capture conversion and >150 syllabus uploads."
+        },
+        {
+          "title": "Experiment 2: Concierge Manual Dynamic Rescheduling Test",
+          "costDuration": "$0 • 72 hrs",
+          "description": "Recruit 20 STEM students on university subreddits (e.g., r/EngineeringStudents). Manually build and maintain their dynamic revision plans via WhatsApp/SMS, rebalancing their schedules when they miss days.",
+          "successCriterion": ">70% of participants report meaningful reduction in study anxiety and request continued service."
+        },
+        {
+          "title": "Experiment 3: Willingness-to-Pay Paywall Test",
+          "costDuration": "$30 • 48 hrs",
+          "description": "Embed a mocked '$3.99/month Unlock AI Auto-Rescheduler' paywall inside a free web-based revision schedule generator tool.",
+          "successCriterion": ">5% click-to-purchase intent on the mocked checkout screen."
+        },
+        {
+          "title": "Experiment 4: Direct Campus Channel Viral Loop Test",
+          "costDuration": "$0 • 24 hrs",
+          "description": "Post custom pre-made revision schedules for popular university introductory courses (e.g., Biology 101, Calculus I) on targeted university Discord/WhatsApp student groups.",
+          "successCriterion": ">100 organic schedule downloads with a >30% invitation referral rate."
+        }
+      ]
+    },
+    "improve": {
+      "vulnerabilities": [
+        {
+          "title": "Passive Notification Blindness",
+          "description": "Standard push notifications are easily dismissed or muted by stressed students, leading to skipped tasks."
+        },
+        {
+          "title": "Deficit-Induced App Avoidance",
+          "description": "When users miss 3-4 days, seeing a wall of red 'Overdue' badges triggers shame, causing users to delete the app entirely."
+        }
+      ],
+      "missingFeatures": [
+        {
+          "title": "'Emergency Reset' Button",
+          "description": "A single tap that wipes overdue guilt, recalculates available hours until the next exam, and evenly redistributes unfinished work across the remaining days."
+        },
+        {
+          "title": "Cognitive Load Balancing",
+          "description": "Visual intensity heatmap preventing the engine from scheduling two heavy analytical study blocks on the same evening."
+        }
+      ],
+      "differentiationOpportunities": [
+        {
+          "title": "Zero-Effort Multimodal Ingestion",
+          "moatFactor": "8/10",
+          "description": "Proprietary prompt pipeline optimized for messy teacher rubrics, handwritten assignment sheets, and standard PDF syllabi."
+        },
+        {
+          "title": "Dynamic Spaced-Revision Scheduler",
+          "moatFactor": "9/10",
+          "description": "Instead of scheduling 'Study for Midterm' on the eve of the test, automatically decomposes the syllabus into micro-review milestones starting 21 days out using spaced retention curves."
+        }
+      ],
+      "specificRecommendations": [
+        "Never present a wall of red 'Overdue' tasks; automatically classify missed sessions as 'Pending Rebalance' to remove shame-driven churn.",
+        "Implement bidirectional standard iCal sync in Phase 1 so students do not need to abandon their existing native calendar apps for social events.",
+        "Target high-stakes standardized exam communities (MCAT, A-Levels, AP exams) as initial beachheads due to their hyper-acute willingness to pay.",
+        "Ship a friction-free web-first client (PWA) prior to native apps so students can effortlessly paste syllabi during desktop laptop study sessions."
+      ]
+    },
+    "build": {
+      "mvpFeatures": {
+        "mustHave": [
+          {
+            "title": "Syllabus Parser & Milestone Extractor",
+            "description": "Upload PDF or image; automatically identifies courses, assignment titles, due dates, and exam schedules with a quick verification UI."
+          },
+          {
+            "title": "Adaptive Revision Calendar Engine",
+            "description": "Auto-generates spaced revision sessions leading up to exams and redistributes missed study blocks with one tap."
+          },
+          {
+            "title": "Daily Focus View (3-Task Max)",
+            "description": "Clean, minimal view showing only today's priorities to eliminate cognitive overwhelm."
+          }
+        ],
+        "shouldHave": [
+          {
+            "title": "Two-Way iCal / Google Calendar Sync",
+            "description": "Exports generated study blocks into personal calendars and reads busy slots to prevent scheduling conflicts."
+          },
+          {
+            "title": "Exam Weighting & Priority Calculator",
+            "description": "Prioritizes study time according to assignment impact on final GPA/grade percentage."
+          }
+        ],
+        "niceToHave": [
+          {
+            "title": "Direct Canvas/Blackboard LMS OAuth",
+            "description": "One-click connection pulling live assignment data directly from the school portal."
+          },
+          {
+            "title": "Peer Study Sprints / Accountability Pings",
+            "description": "Anonymous co-working timers with classmates studying for the same upcoming exam."
+          }
+        ]
+      },
+      "sprintRoadmap": [
+        {
+          "sprint": "SPRINT 01",
+          "timeRange": "Weeks 1-2",
+          "title": "Core Data Model & Syllabus Parsing Pipeline",
+          "description": "Establish the foundational database schema, auth, and LLM structured output pipeline for document parsing.",
+          "keyDeliverables": [
+            "PostgreSQL schema for Users, Courses, Assignments, and StudyBlocks",
+            "LLM extraction pipeline (Syllabus PDF -> JSON schema of academic deadlines)",
+            "Interactive verification view to inspect and adjust extracted dates"
+          ]
+        },
+        {
+          "sprint": "SPRINT 02",
+          "timeRange": "Weeks 3-4",
+          "title": "Dynamic Scheduling & Task Engine",
+          "description": "Implement the core logic that converts deadlines into spaced daily revision blocks.",
+          "keyDeliverables": [
+            "Spaced revision scheduling algorithm (backward chaining from exam dates)",
+            "Today's Focus UI with instant task completion state management",
+            "'Rebalance Schedule' logic for dynamically re-distributing missed tasks"
+          ]
+        },
+        {
+          "sprint": "SPRINT 03",
+          "timeRange": "Weeks 5-6",
+          "title": "Calendar Integrations & Notification Infrastructure",
+          "description": "Integrate standard calendar feeds and friction-free reminder systems.",
+          "keyDeliverables": [
+            "Read/write iCal subscription feed",
+            "Push notification and smart email digest engine for morning priorities",
+            "End-to-end user onboarding flow with sample syllabus demo data"
+          ]
+        },
+        {
+          "sprint": "SPRINT 04",
+          "timeRange": "Weeks 7-8",
+          "title": "Beta Launch, Telemetry & Paywall Gating",
+          "description": "Deploy to closed beta cohort of 100 students, wire analytics, and test premium features.",
+          "keyDeliverables": [
+            "Stripe/RevenueCat subscription checkout for Pro Exam Pass",
+            "Telemetry dashboard tracking Day 1, Day 7, and Day 14 active retention",
+            "Public beta launch to initial university waitlist"
+          ]
+        }
+      ],
+      "suggestedTechStack": {
+        "frontend": "Next.js 14 (App Router) + Tailwind CSS + PWA (Capacitor for iOS/Android native packaging)",
+        "backend": "FastAPI (Python) for algorithmic scheduling & LLM orchestration, or Next.js Route Handlers",
+        "database": "Supabase (PostgreSQL with Row Level Security and Realtime subscriptions)",
+        "aiServices": "Google Gemini 2.5 Flash (structured JSON output for fast, ultra-low-cost syllabus document extraction)",
+        "auth": "Supabase Auth (Sign in with Google, Apple, and Magic Link)"
+      },
+      "immediate72HourChecklist": [
+        {
+          "task": "Collect 10 diverse university and high school syllabi (PDF/DOCX/Images) across STEM, Humanities, and Business.",
+          "done": false
+        },
+        {
+          "task": "Build and test a single Gemini 2.5 Flash prompt script with Pydantic output validation to benchmark parsing accuracy on all 10 sample syllabi.",
+          "done": false
+        },
+        {
+          "task": "Draft a single-page interactive wireframe in Figma illustrating the 'Upload Syllabus -> Confirm Dates -> Auto-Generated Schedule' flow.",
+          "done": false
+        },
+        {
+          "task": "Launch a basic Carrd landing page with the positioning 'Upload your syllabus, get a stress-free daily study plan' to collect the first 100 student beta emails.",
+          "done": false
+        }
+      ]
+    },
+    "finalProjectPlan": {
+      "problemStatement": "Students balance high cognitive loads across multiple concurrent courses, but current tools demand tedious manual entry and break down the moment a single study session is skipped. This produces task paralysis, cramming, and rampant academic burnout.",
+      "targetAudience": "College undergraduates (especially STEM/pre-med) and upper-level secondary students (AP, IB, A-Levels) with complex, deadline-heavy coursework.",
+      "proposedSolution": "Cadence: An automated, adaptive academic organizer that parses syllabi in seconds and automatically generates, balances, and re-optimizes daily study and revision schedules when life happens.",
+      "keyFeatures": [
+        "Zero-effort Syllabus-to-Calendar AI ingestion engine",
+        "Dynamic auto-rebalancing algorithm that redistributes missed study blocks without guilt",
+        "Cognitively balanced daily focus view capped at top 3 high-impact priorities",
+        "Two-way iCal and Google Calendar sync with conflict avoidance"
+      ],
+      "mainRisks": [
+        "Input abandonment churn neutralized by automated 60-second multi-modal syllabus onboarding.",
+        "Accuracy risks neutralized by a mandatory human-in-the-loop date confirmation screen before scheduling."
+      ],
+      "mvpScope": "Includes PDF syllabus parsing, spaced study schedule calculation, daily priority view, rebalance engine, and iCal feed export. Excludes direct LMS OAuth write-backs and social study groups.",
+      "recommendedNextSteps": [
+        "Validate LLM syllabus parsing reliability across 20 edge-case syllabi.",
+        "Conduct 10 student problem-interview walkthroughs using the prototype click-through.",
+        "Ship the web MVP in time for the upcoming academic midterms/finals cycle."
+      ],
+      "markdownSpecification": "# Cadence — Product Requirements & Architectural Specification\n\n## 1. Executive Summary\nCadence is an intelligent study orchestration engine engineered to eliminate the manual friction of academic planning. By replacing static task lists with dynamic, auto-rebalancing study cadences derived automatically from course syllabi, Cadence prevents student burnout and study abandonment.\n\n## 2. Core Problem & User Dynamics\n- **Setup Friction:** Students abandon digital planners because manually transcribing 30+ assignments per class takes hours.\n- **The Overdue Death Spiral:** Traditional to-do apps collect red 'Overdue' flags when a student falls sick or takes a day off, causing emotional avoidance and app deletion.\n- **Revision Blindness:** Students treat studying as an event occurring 48 hours before an exam rather than a distributed process, resulting in severe sleep deprivation and poor retention.\n\n## 3. Product Architecture & User Flow\n1. **Ingestion Layer:** User drags and drops course syllabi (PDF, PNG, or DOCX). A lightweight Gemini 2.5 Flash model parses the documents into a strictly typed schema containing course titles, assignment weights, due dates, and exam dates.\n2. **Verification Drawer:** User reviews parsed dates side-by-side with the uploaded document to guarantee 100% schedule fidelity.\n3. **Schedule Synthesis:** The Cadence engine calculates backward from exam dates, inserting 45-minute revision blocks using spaced repetition intervals (e.g., T-21 days, T-14 days, T-7 days, T-3 days, T-1 day).\n4. **Daily Execution:** The student interacts with a minimal 'Daily Focus' interface displaying only today's mandatory blocks.\n5. **Adaptive Rebalancing:** If a study session is missed, tapping 'Rebalance' automatically smooths the missed hours across remaining available study windows without human reconfiguration.\n\n## 4. MVP Functional Scope\n- **Auth & Storage:** Supabase Auth (Magic Link / Google OAuth) + PostgreSQL database with strict RLS.\n- **Syllabus Parsing API:** Python/FastAPI endpoint leveraging Gemini 2.5 Flash structured outputs.\n- **Calendar Engine:** Standard iCalendar (RFC 5545) subscription output URL.\n- **Client:** Next.js 14, Tailwind CSS, Lucide icons, deployable as a mobile-first PWA.\n\n## 5. Monetization & Growth\n- **Free Tier:** 2 course syllabi parsed per semester, standard manual task entry, manual schedule adjustments.\n- **Pro Tier ($4.99/mo or $39.99/yr):** Unlimited syllabi uploads, automated dynamic rebalancing engine, two-way Google Calendar conflict sync, and priority exam cram-prevention mode."
+    },
+    "id": "proj_1793181427395",
+    "createdAt": "2026-10-28T09:57:07.395Z",
+    "inputs": {
+      "idea": "An app that helps students organize homework, assignments, exams, and revision schedules in one place.",
+      "audience": "School students and college students.",
+      "problem": "Students may forget deadlines, struggle to prioritize tasks, and find it difficult to plan revision across multiple subjects.",
+      "solutions": "Paper planners, notebooks, calendar apps, reminders, and spreadsheets."
+    },
+    "modelUsed": "gemini-flash-latest"
+  }
+]

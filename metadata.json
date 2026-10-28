@@ -1,0 +1,6 @@
+{
+  "name": "ProjectLens",
+  "description": "ProjectLens — See Your Project Clearly. Autonomous AI project analysis across market research, risk validation, feature improvements, and MVP roadmap execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
